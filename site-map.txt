@@ -1,0 +1,240 @@
+================================================================================
+MAPA DO SITE - PORTFÓLIO LUIDHY DAVI
+================================================================================
+
+================================================================================
+1. PALETA DE CORES (HSL)
+================================================================================
+
+CORES BASE:
+--background: 247 9% 9%          → #16161a (Fundo escuro principal)
+--foreground: 240 100% 99.8%     → #fffffe (Texto branco)
+
+CORES DE DESTAQUE:
+--accent: 250 100% 66%           → #7f5af0 (Roxo vibrante - cor principal)
+--primary: 240 100% 99.8%        → #fffffe (Branco para contraste)
+
+CORES SECUNDÁRIAS:
+--secondary: 247 9% 15%          → Cinza escuro para cards
+--muted: 217 10% 57%             → #94a1b2 (Cinza médio para textos secundários)
+
+ELEMENTOS DE INTERFACE:
+--card: 247 9% 11%               → Fundo dos cards
+--border: 247 9% 20%             → Bordas sutis
+--input: 247 9% 20%              → Inputs e campos de formulário
+
+================================================================================
+2. TIPOGRAFIA
+================================================================================
+
+FONTE DISPLAY (Títulos):
+- Família: 'Space Grotesk', sans-serif
+- Peso: 700 (Bold)
+- Uso: H1, H2, H3, títulos de seções
+
+FONTE BODY (Textos):
+- Família: 'Inter', sans-serif
+- Peso: 400 (Regular) / 600 (Semi-Bold)
+- Uso: Parágrafos, descrições, botões
+
+================================================================================
+3. GRADIENTES
+================================================================================
+
+GRADIENTE PRINCIPAL - Nome "Luidhy Davi" (H1):
+linear-gradient(to right, 
+  hsl(240 100% 99.8%),    → Branco
+  hsl(250 100% 66%),      → Roxo accent
+  hsl(240 100% 99.8%)     → Branco
+)
+
+GRADIENTE DE FUNDO - Hero Section (bottom):
+linear-gradient(to bottom,
+  hsl(247 9% 9%),                → Background
+  hsl(247 9% 9%),                → Background
+  hsl(250 100% 66% / 0.05)       → Accent com 5% de opacidade
+)
+
+GRADIENTE INTERATIVO - Botões Hover:
+linear-gradient(to right,
+  hsl(250 100% 66%),             → Accent
+  hsl(240 100% 99.8%)            → Primary/Branco
+)
+
+================================================================================
+4. CONTEÚDO DAS SEÇÕES
+================================================================================
+
+---[ HEADER ]---
+Links de Navegação:
+- Sobre
+- Serviços
+- Projetos
+- Contato
+
+---[ HERO SECTION ]---
+Título Principal (H1):
+"Luidhy Davi"
+(Com gradiente: branco → roxo → branco)
+
+Subtítulo:
+"Front-End Developer"
+
+Descrição:
+"Criando experiências digitais únicas através de código limpo e design moderno"
+
+Botão CTA:
+"Ver Projetos"
+
+---[ ABOUT SECTION ]---
+Título:
+"Sobre Mim"
+
+Texto Principal:
+"Olá! Sou Luidhy Davi, um desenvolvedor front-end apaixonado por criar 
+interfaces elegantes e funcionais. Com foco em clean code e experiência 
+do usuário, transformo ideias em realidade digital."
+
+"Minha jornada no desenvolvimento web começou com curiosidade e evoluiu 
+para uma paixão por criar soluções que fazem a diferença. Acredito que 
+o bom design e código de qualidade andam juntos."
+
+Skills Técnicas:
+- HTML5
+- CSS3
+- JavaScript
+- React
+- TypeScript
+- Tailwind CSS
+- Sass
+- Bootstrap
+- Python
+- SQL
+
+---[ SERVICES SECTION ]---
+Título:
+"Serviços"
+
+Card 1 - Desenvolvimento Web:
+Título: "Desenvolvimento Web"
+Ícone: Code (</> símbolo)
+Descrição: "Sites e aplicações web modernas, responsivas e otimizadas 
+para performance, construídas com as melhores práticas do mercado."
+
+Card 2 - Design Responsivo:
+Título: "Design Responsivo"
+Ícone: Smartphone
+Descrição: "Interfaces que se adaptam perfeitamente a qualquer dispositivo, 
+garantindo uma experiência consistente em mobile, tablet e desktop."
+
+Card 3 - UI/UX:
+Título: "UI/UX"
+Ícone: Palette
+Descrição: "Criação de interfaces intuitivas e atraentes, focadas na 
+experiência do usuário e conversão de resultados."
+
+Card 4 - Otimização:
+Título: "Otimização"
+Ícone: Zap (raio)
+Descrição: "Performance e SEO otimizados para garantir que seu site 
+carregue rápido e seja encontrado nos mecanismos de busca."
+
+---[ PROJECTS SECTION ]---
+Título:
+"Projetos em Destaque"
+
+Projeto 1:
+Título: "E-Commerce Platform"
+Descrição: "Plataforma completa de e-commerce com carrinho, checkout e 
+painel administrativo."
+Tecnologias: React, TypeScript, Tailwind
+
+Projeto 2:
+Título: "Dashboard Analytics"
+Descrição: "Sistema de visualização de dados em tempo real com gráficos 
+interativos e filtros avançados."
+Tecnologias: React, Chart.js, API REST
+
+Projeto 3:
+Título: "Landing Page Premium"
+Descrição: "Landing page de alta conversão com animações sofisticadas e 
+design moderno."
+Tecnologias: HTML, CSS, JavaScript
+
+Nota:
+"Projetos reais em breve..."
+
+---[ CONTACT SECTION ]---
+Título:
+"Vamos Conversar?"
+
+Subtítulo:
+"Tem um projeto em mente? Entre em contato e vamos transformar sua ideia 
+em realidade."
+
+Formulário:
+- Campo: Nome (placeholder: "Seu nome")
+- Campo: Email (placeholder: "seu@email.com")
+- Campo: Mensagem (placeholder: "Conte-me sobre seu projeto...")
+- Botão: "Enviar Mensagem"
+
+Links Sociais:
+- GitHub: https://github.com
+- LinkedIn: https://linkedin.com
+- Email: contato@luidhydavi.dev
+
+---[ FOOTER ]---
+Texto:
+"© 2024 Luidhy Davi. Desenvolvido com ❤️ e código limpo."
+
+================================================================================
+5. ANIMAÇÕES E EFEITOS
+================================================================================
+
+ANIMAÇÕES DE ENTRADA:
+- fade-in-up: Elementos surgem de baixo com fade (duração: 0.6s)
+- fade-in: Fade simples (duração: 0.6s)
+- slide-in-left: Elementos deslizam da esquerda (duração: 0.6s)
+
+EFEITOS HOVER:
+- hover-lift: Elevação sutil (-8px) com sombra ao passar o mouse
+- Cards elevam com transform: translateY(-8px)
+- Transição suave: cubic-bezier(0.4, 0, 0.2, 1)
+
+SOMBRAS:
+- shadow-elegant: 0 10px 40px -10px hsl(250 100% 66% / 0.2)
+- shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.4)
+
+SCROLL BEHAVIOR:
+- Navegação suave entre seções (smooth scroll)
+- IntersectionObserver para animações ao entrar no viewport
+
+================================================================================
+6. ESTRUTURA DE ESPAÇAMENTO (Sistema 4px/8px)
+================================================================================
+
+ESCALA DE ESPAÇAMENTO:
+4px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px
+
+APLICAÇÃO:
+- Padding de seções: py-20 (80px) ou py-32 (128px)
+- Gaps entre elementos: gap-8 (32px), gap-12 (48px)
+- Margens: mb-8, mt-16, etc.
+
+================================================================================
+7. RESPONSIVIDADE
+================================================================================
+
+BREAKPOINTS:
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
+
+AJUSTES POR DISPOSITIVO:
+- Títulos: text-4xl (mobile) → text-6xl (desktop)
+- Padding: p-6 (mobile) → p-12 (desktop)
+- Grid: grid-cols-1 (mobile) → grid-cols-2 (tablet) → grid-cols-4 (desktop)
+
+================================================================================
+FIM DO MAPA
+================================================================================background-image: linear-gradient(rgb(9, 9, 11), rgb(9, 9, 11), rgba(110, 82, 255, 0.05))

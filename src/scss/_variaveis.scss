@@ -1,0 +1,32 @@
+@charset 'utf-8';
+
+$fonte-titulos: 'Space Grotesk', sans-serif;
+// Fontes
+$fonte-texto: 'Inter', sans-serif;
+// Cores
+$background: #16161A;
+$branco: #fffffe;
+$roxo: #7f5af0;
+$cinza: #94A1B3;
+// Tamanho para tipografia
+$font-size-xs: 1.2rem;   // 12px (múltiplo de 4)
+$font-size-sm: 1.4rem;   // 14px (múltiplo de 4)
+$font-size-base: 1.6rem; // 16px (múltiplo de 8)
+$font-size-md: 1.8rem;   // 18px (múltiplo de 4)
+$font-size-lg: 2rem;     // 20px (múltiplo de 4)
+$font-size-xl: 2.4rem;   // 24px (múltiplo de 8)
+$font-size-2xl: 3.2rem;  // 32px (múltiplo de 8)
+$font-size-3xl: 4rem;    // 40px (múltiplo de 8)
+$font-size-4xl: 4.8rem;  // 48px (múltiplo de 8)
+$font-size-5xl: 6.4rem;  // 64px (múltiplo de 8)
+
+  /* Espaçamento (margin, padding, gap) */
+  $space-1: 0.4rem;
+  $space-2: 0.8rem;
+  $space-3: 1.2rem;
+  $space-4: 1.6rem;
+  $space-5: 2rem;
+  $space-6: 2.4rem;
+  $space-7: 3.2rem;
+  $space-8: 4.8rem;
+  $space-9: 6rem;
