@@ -238,3 +238,5 @@ AJUSTES POR DISPOSITIVO:
 ================================================================================
 FIM DO MAPA
 ================================================================================background-image: linear-gradient(rgb(9, 9, 11), rgb(9, 9, 11), rgba(110, 82, 255, 0.05))
+
+- adicionar icons flutuantes na sessao apresentação. 

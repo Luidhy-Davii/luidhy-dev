@@ -9,7 +9,6 @@
   gap: $space-3;
   text-align: center;
   min-height: calc(100vh - 8rem); // diminui a altura do header
-
   position: relative;
   overflow: hidden; 
 
@@ -92,7 +91,7 @@ background-clip: text;
 
 
 .sessao--apresentacao__subtitulo {
-  font-size: clamp($font-size-sm, 4vw, $font-size-3xl);
+  font-size: clamp($font-size-md, 4vw, $font-size-3xl);
 }
 
 .sessao--apresentacao__texto {
@@ -128,12 +127,12 @@ background-clip: text;
 
     &:hover {
       color: $roxo;
-
       svg {
         filter: drop-shadow(0 0 12px rgba($roxo, 0.4));
       }
     }
   }
+  
 
   // RESPONSIVO
   @media (min-width: 768px) {
@@ -150,6 +149,30 @@ background-clip: text;
   }
 }
 
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;             /* ligeiramente menor para alinhar melhor */
+  background-color: #fff;    /* branco */
+  margin-left: 5px;
+  animation: blink 0.8s steps(1) infinite;
+  vertical-align: -0.1em;    /* centraliza perfeitamente com o texto */
+}
 
+/* Animação do piscar */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 
+/* Letras aparecendo suavemente */
+.char-fade {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

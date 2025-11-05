@@ -2,6 +2,7 @@
 @use './variaveis' as *;
 @use './header';
 @use './mainSection';
+@use './sobre';
 @import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap';
 
 * {
@@ -35,10 +36,60 @@ body {
   margin: 0 auto;
 }
 
-
 /* navegação pelo tab */
 :focus-visible {
   outline: 2px solid $roxo;
   outline-offset: 4px;
   border-radius: 8px;
+}
+
+.scroll--top {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .scroll--top {
+    bottom: 4rem;
+    right: 4rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    position: fixed;
+    background: rgba($roxo, 0.15);
+    border: 1px solid rgba($roxo, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba($branco, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba($roxo-claro, 0.1);
+      color: $roxo;
+      border-color: rgba($roxo, 0.5);
+      box-shadow: 0 0 20px rgba($roxo, 0.25);
+      transform: translateY(-2px);
+
+      svg {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .scroll--top {
+    right: 5rem;
+  }
 }

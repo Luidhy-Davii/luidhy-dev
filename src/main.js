@@ -72,3 +72,58 @@ document.addEventListener('mouseleave', () => {
   if (titulo) titulo.style.transform = 'translate3d(0, 0, 0)';
 });
 
+// Efeito máquina de esccrever
+function maquinaDeEscrever(element) {
+  const text = element.textContent;
+  element.textContent = '';
+  let i = 0;
+  const baseSpeed = 70; // Velocidade base mais rápida
+  const randomVariation = 50; // Variação aleatória para naturalidade
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  element.appendChild(cursor);
+
+  function type() {
+    if (i < text.length) {
+      const charSpan = document.createElement('span');
+      charSpan.className = 'char-fade';
+      charSpan.textContent = text.charAt(i);
+      element.insertBefore(charSpan, cursor);
+
+      const speed = baseSpeed + Math.random() * randomVariation;
+      i++;
+      setTimeout(type, speed);
+    } else {
+      cursor.classList.add('active');
+    }
+  }
+  type();
+}
+
+window.onload = function () {
+  const title = document.querySelector('.sessao--apresentacao__subtitulo');
+  //anima o subtítulo
+  maquinaDeEscrever(title);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
