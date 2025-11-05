@@ -17,15 +17,11 @@
 .cabecalho--logo {
   display: flex;
   align-items: center;
-  font-size: clamp($font-size-xl, 5vw, $font-size-3xl);
-  font-family: $fonte-titulos;
-  text-transform: uppercase;
-  color: $branco;
-  letter-spacing: 2px;
   text-decoration: none;
-  font-weight: 700;
+  letter-spacing: 2px;
   position: relative;
   z-index: 1;
+  @include tipografia(clamp($font-size-xl, 5vw, $font-size-3xl), $fonte-titulos,$branco,700,uppercase);
 }
 
 .cabecalho--span {

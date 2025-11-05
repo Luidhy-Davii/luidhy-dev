@@ -93,3 +93,20 @@ body {
     right: 5rem;
   }
 }
+
+/* ===== Chrome, Edge e Safari ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $roxo;
+  /* parte que se move */
+  background-clip: padding-box;
+  border-radius: 8px;
+}

@@ -66,3 +66,50 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+@mixin efeitoBrilhoDeFundo($cor, $blur: 40px, $altura: 60%) {
+  position: relative;
+  overflow: hidden;
+   // adiciona um gradiente na parte de baixo da section main
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $altura;
+    background: radial-gradient(
+      ellipse at bottom,
+      rgba($cor, 0.15) 0%,
+      rgba($cor, 0.05) 50%,
+      transparent 100%
+    );
+    filter: blur($blur);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 0;
+  }
+  /* conteúdo acima do brilho */
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@mixin gradienteTitulos($cores...) {
+  background-image: linear-gradient(to right, $cores...);
+  background-clip: text;
+  -webkit-background-clip: text; // suporte Safari
+  color: transparent; // esconde a cor sólida
+  //Adiciona brilho
+  text-shadow: 0 0 30px rgba(127, 90, 240, 0.3);
+  filter: drop-shadow(0 0 10px rgba(127, 90, 240, 0.2));
+}
+
+@mixin tipografia($size, $family, $color: none, $weight: 400, $transform: none) {
+  font-size: $size;
+  font-family: $family;
+  color: $color;
+  font-weight: $weight;
+  text-transform: $transform;
+}

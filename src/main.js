@@ -1,6 +1,6 @@
 import './scss/style.scss';
 
-// menu hamburguer
+// MENU HAMBURGUER
 const mobileMenu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav--list');
 
@@ -72,7 +72,7 @@ document.addEventListener('mouseleave', () => {
   if (titulo) titulo.style.transform = 'translate3d(0, 0, 0)';
 });
 
-// Efeito máquina de esccrever
+// EFEITO MÁQUINA DE ESCREVER
 function maquinaDeEscrever(element) {
   const text = element.textContent;
   element.textContent = '';
@@ -100,11 +100,13 @@ function maquinaDeEscrever(element) {
   type();
 }
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector('.sessao--apresentacao__subtitulo');
-  //anima o subtítulo
   maquinaDeEscrever(title);
-};
+});
+
+
+// MOSTRA O SCROLL TOP DEPOIS DE 400PX
 
 
 

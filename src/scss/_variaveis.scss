@@ -9,7 +9,18 @@ $branco: #fffffe;
 $roxo: #7f5af0;
 $roxo-claro: #854aff;
 $cinza: #94A1B3;
+
+// === Variações criadas ===
+$roxo-claro: lighten($roxo, 10%);   // Para hover ou gradiente
+$roxo-escuro: darken($roxo, 10%);   // Para detalhes mais sutis
+
+$cinza-claro: lighten($cinza, 15%); // Para textos secundários
+$cinza-escuro: darken($cinza, 15%); // Para divisores ou bordas
+
+$branco-transparente: rgba($branco, 0.8); // Para texto sobre imagem
+$fundo-secundario: lighten($background, 5%);   // Para containers internos
 // Tamanho para tipografia
+
 $font-size-xs: 1.2rem;   // 12px (múltiplo de 4)
 $font-size-sm: 1.4rem;   // 14px (múltiplo de 4)
 $font-size-base: 1.6rem; // 16px (múltiplo de 8)
