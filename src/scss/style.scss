@@ -1,8 +1,8 @@
-
-// @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
-@import './variaveis';
-@import './header';
+@use './mixins' as *;
+@use './variaveis' as *;
+@use './header';
+@use './mainSection';
+@import 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap';
 
 * {
   margin: 0;
@@ -11,23 +11,34 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
   background-color: $background;
   color: $branco;
-  min-height: 100vh; 
+  min-height: 100vh;
   width: 100%;
   line-height: 1.5;
   font-family: $fonte-texto;
   font-size: 16px;
 }
 
-// /* container de toda a plicação*/
-// .container {
-//     max-width: 1216px;
-//     margin: 0 auto;
-//     padding: 0 2rem;
-//   }
+.container--spacing {
+  max-width: 1024px;
+  margin: $space-2 auto 0 auto;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+
+/* navegação pelo tab */
+:focus-visible {
+  outline: 2px solid $roxo;
+  outline-offset: 4px;
+  border-radius: 8px;
+}

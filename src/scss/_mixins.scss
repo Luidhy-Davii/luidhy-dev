@@ -1,0 +1,68 @@
+@use './variaveis' as *;
+
+// Borda com glow roxo
+@mixin border-glow($width: 2px, $opacity: 0.2) {
+  border: $width solid rgba(127, 90, 240, $opacity);
+  box-shadow: 0 0 15px rgba(127, 90, 240, 0.15), inset 0 0 15px rgba(127, 90, 240, 0.05);
+}
+
+// Gradiente radial 
+@mixin radial-glow($color: #7f5af0, $opacity: 0.08) {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(127, 90, 240, $opacity), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+// Hover com linha animada
+@mixin link-underline($color: $roxo) {
+  position: relative;
+  color: $branco;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: $color;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+}
+
+// Menu hamburguer animado
+@mixin hamburger($size: 25px, $height: 2px, $gap: 5px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+  padding: 10px;
+  cursor: pointer;
+
+  .bar {
+    width: $size;
+    height: $height;
+    background-color: $branco;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  &.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.active .bar:nth-child(2) { opacity: 0; }
+  &.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

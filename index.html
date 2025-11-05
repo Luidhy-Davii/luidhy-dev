@@ -8,7 +8,7 @@
 </head>
 
 <body>
- <header class="cabecalho container">
+ <header class="cabecalho container--spacing">
     <a href="#" class="cabecalho--logo" aria-hidden="true"><span class="cabecalho--span">&lt;</span> Luidhy DEV <span class="cabecalho--span">&gt;</span></a>
     <!-- menu hamburguer -->
     <div class="menu-toggle" id="mobile-menu" tabindex="0" aria-label="Abrir menu" aria-expanded="false">
@@ -28,11 +28,17 @@
     </nav>
   </header>
   <!-- fim-header -->
-  <!-- <main class="sessao--apresentacao container
-  ">
-    <h2 class="sessao--apresentacao__span">Salveee, eu sou o 👋</h2>
-    <h1 class="sessao--apresentacao__titulo">Luidhy Davi .</h1>
-  </main> -->
+  <main class="sessao--apresentacao ">
+    <h3 class="sessao--apresentacao__span">Salveee, eu sou o 👋</h3>
+    <h1 class="sessao--apresentacao__titulo" data-tilt>Luidhy Davi</h1>
+    <h2 class="sessao--apresentacao__subtitulo">Front-End Developer</h2>
+    <p class="sessao--apresentacao__texto">Transformo ideias em experiências digitais incríveis. Especializado em criar soluções web modernas, responsivas e de alta performance.</p>
+    <div class="scroll-indicator">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
+    </svg>
+  </div>
+  </main> 
   <!-- scripts -->
   <script type="module" src="./src/main.js"></script>
 </body>

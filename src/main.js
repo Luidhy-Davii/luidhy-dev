@@ -42,3 +42,33 @@ document.addEventListener('keydown', (event) => {
     navList.classList.remove('active');
   }
 });
+
+// Animação do título
+document.addEventListener('mousemove', (e) => {
+  const titulo = document.querySelector('[data-tilt]');
+  if (!titulo) return;
+
+  const { clientX, clientY } = e;
+  const { innerWidth, innerHeight } = window;
+
+  // Centro da tela
+  const centerX = innerWidth / 2;
+  const centerY = innerHeight / 2;
+
+  // Distância do centro (em %)
+  const moveX = (clientX - centerX) / centerX;
+  const moveY = (clientY - centerY) / centerY;
+
+  // Movimento suave (max 20px)
+  const x = moveX * 10;
+  const y = moveY * 10;
+
+  titulo.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+});
+
+// Reset ao sair da tela
+document.addEventListener('mouseleave', () => {
+  const titulo = document.querySelector('[data-tilt]');
+  if (titulo) titulo.style.transform = 'translate3d(0, 0, 0)';
+});
+

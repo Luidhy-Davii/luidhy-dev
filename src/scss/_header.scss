@@ -1,84 +1,48 @@
-@charset "utf-8";
-// base (mobile)
+@use './variaveis' as *;
+@use './mixins' as *;
+
+// _header.scss
 .cabecalho {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $space-3 $space-5;
-  margin: 0 $space-3;
   position: relative;
-  border: 2px solid rgba(127, 90, 240, 0.2);
-  box-shadow: 
-    0 0 15px rgba(127, 90, 240, 0.15),
-    inset 0 0 15px rgba(127, 90, 240, 0.05);
   border-radius: $space-4;
-  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.85));
-  margin-top: $space-6;
-  backdrop-filter: blur(5px);
-}
 
-.cabecalho::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(127, 90, 240, 0.08), transparent 50%);
-  pointer-events: none;
-  z-index: 0;
+  @include border-glow(2px, 0.2);
+  @include radial-glow();
 }
 
 .cabecalho--logo {
-  // display flex para alinhar o <> com o texto
   display: flex;
-  flex-direction: row;
   align-items: center;
-  font-size: $font-size-xl;
+  font-size: clamp($font-size-xl, 5vw, $font-size-3xl);
   font-family: $fonte-titulos;
   text-transform: uppercase;
   color: $branco;
   letter-spacing: 2px;
   text-decoration: none;
   font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
-
 
 .cabecalho--span {
   color: $roxo;
   font-size: $font-size-3xl;
 }
 
-/* menu hamgurguer */
+/* Menu hamburguer */
 .menu-toggle {
-  display: flex;
+  @include hamburger();
   margin-left: auto;
-  flex-direction: column;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: 10px;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 2px;
-  background-color: $branco;
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-}
-
-.menu-toggle.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  position: relative;
+  z-index: 1;
 }
 
 .nav--list {
-  margin-top: $space-3;
+  margin-top: 2.7rem;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -89,7 +53,6 @@
   left: 0;
   width: 100%;
   height: 0;
-  margin-top: 2.7rem;//distância do menu ativo do header
   background: $background;
   border-radius: $space-1;
   backdrop-filter: blur(5px);
@@ -97,56 +60,31 @@
   transition: height 0.4s ease-in-out;
   z-index: 1000;
   gap: $space-7;
-}
 
-.nav--list li {
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
+  li {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
 
-.nav--list.active {
-  height: calc(100vh - 60px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+  &.active {
+    height: calc(100vh - 60px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
-.nav--list.active li {
-  opacity: 1;
+    li {
+      opacity: 1;
+    }
+  }
 }
 
 .nav--list__links {
-  color: $branco;
+  @include link-underline();
   font-size: $font-size-md;
-  text-decoration: none;
   position: relative;
-
-  
-}
-
-.nav--list__links::after {
-  position: absolute;
-  content: '';
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background-color: $roxo;
-  transition: width 0.3s ease;
-}
-
-.nav--list__links:hover::after,
-.nav--list__links:focus::after {
-  width: 100%;
-}
-
-.nav--list {
-  overflow: hidden;
+  z-index: 1;
 }
 
 /* Tablet */
 @media (min-width: 768px) {
-  .cabecalho--logo {
-    font-size: $font-size-2xl;
-  }
 
   .nav--list__links {
     font-size: 1.8rem;
@@ -161,13 +99,6 @@
   }
 
   .nav--list {
-    gap: 5rem;
-    overflow: visible;
-    /* para não cortar o ::after */
-  }
-
-
-  .nav--list {
     position: static;
     height: auto;
     flex-direction: row;
@@ -177,17 +108,16 @@
     background: transparent;
     backdrop-filter: none;
     box-shadow: none;
-  }
+    overflow: visible;
 
-  .nav--list li {
-    opacity: 1;
+    li {
+      opacity: 1;
+    }
   }
 }
-// Desktop
+
+/* Desktop */
 @media (min-width: 1024px) {
-  .cabecalho--logo {
-    font-size: $font-size-3xl;
-  }
 
   .nav--list__links {
     font-size: $font-size-md;
