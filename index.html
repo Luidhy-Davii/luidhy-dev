@@ -46,21 +46,54 @@
   </main>
   <!-- sessão apresentação -->
   <!-- sessão sobre -->
-  <section class="sessao--sobre" id="sobre">
-    <div class="whapper--container container">
-      <h2 class="titulo--sobre">Sobre mim</h2>
-      <p class="texto--sobre">"Olá! Sou Luidhy Davi, um desenvolvedor front-end apaixonado por criar
-        interfaces elegantes e funcionais. Com foco em clean code e experiência
-        do usuário, transformo ideias em realidade digital."</p>
-      <p class="texto--sobre">
-        "Minha jornada no desenvolvimento web começou com curiosidade e evoluiu
-        para uma paixão por criar soluções que fazem a diferença. Acredito que
-        o bom design e código de qualidade andam juntos."</p>
+  <section id="sobre" class="sessao--sobre">
+    <div class="sobre--wrapper container">
+
+      <!-- CONTEÚDO (sempre visível) -->
+      <div class="sessao--sobre__content">
+        <h2 class="sessao--sobre__titulo">Sobre mim</h2>
+
+        <div class="sessao--sobre__texto">
+          <p class="sobre--texto__paragrafos">
+            Sou um <strong>desenvolvedor front-end</strong> apaixonado por transformar ideias em interfaces
+            <em>funcionais, limpas e visualmente marcantes.</em>
+          </p>
+
+          <p class="sobre--texto__paragrafos">
+            Gosto de unir <strong>design</strong>, <em>tecnologia</em> e <strong>experiência do usuário</strong> para
+            criar soluções que realmente façam sentido para quem usa.
+          </p>
+
+          <p class="sobre--texto__paragrafos">
+            Meu foco é entregar projetos <strong>acessíveis</strong>, <em>responsivos</em> e <strong>bem
+              estruturados</strong>, sempre buscando evoluir, aprender e trazer o melhor do código e do design para
+            cada detalhe.
+          </p>
+
+
+        </div>
+
+        <!-- BOTÃO CV -->
+        <a href="./src/assets/Luidhy Davi Alves de Lima -2.pdf" download class="botao--curriculo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5-.5h4v4a.5.5 0 0 1-1 0v-3H1a.5.5 0 0 1-.5-.5z" />
+            <path
+              d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+            <path
+              d="M7 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm-2 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+          </svg>
+          Baixar Currículo
+        </a>
+      </div>
+
+      <!-- FOTO (só aparece em tablet+) -->
+      <div class="sobre__foto">
+        <img src="./src/assets/minhaFoto.JPG" alt="Luidhy Davi - Front-end Developer" class="sobre--foto__img" />
+      </div>
+
     </div>
-    <img src="" alt="">
   </section>
-
-
+  <!-- fim-sessão sobre -->
   <!-- Botão Voltar ao Topo -->
   <a href="#" class="scroll--top">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">

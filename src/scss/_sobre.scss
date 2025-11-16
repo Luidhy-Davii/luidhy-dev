@@ -2,9 +2,142 @@
 @use './mixins' as *;
 
 .sessao--sobre {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  min-height: 100vh;
+    min-height: 100dvh;
+    padding: $space-6 $space-4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    @include efeitoBrilhoDeFundo($roxo);
 }
 
+.sobre--wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $space-7;
+    width: 100%;
+    max-height: 100%;
+    padding: $space-4 0;
+}
+
+/* FOTO — ESCONDIDA NO MOBILE */
+.sobre__foto {
+    display: none;
+}
+
+.sessao--sobre__titulo {
+    @include tipografia(clamp($font-size-xl, 4vw, $font-size-3xl), $fonte-titulos, $branco, 700, capitalize);
+    @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+    margin: 0 0 $space-4;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 4px;
+        background: $roxo;
+        border-radius: 2px;
+        box-shadow: 0 0 15px rgba($roxo, 0.5);
+    }
+}
+
+.sessao--sobre__texto {
+    @include tipografia(clamp($font-size-base, 3vw, $font-size-lg), $fonte-texto, $cinza);
+    line-height: 1.7;
+    margin: 0 auto $space-6;
+
+    .sobre--texto__paragrafos {
+        margin-bottom: $space-4;
+
+        strong {
+            color: $branco;
+            font-weight: 600;
+        }
+
+        em {
+            color: $roxo;
+            font-style: normal;
+        }
+    }
+}
+
+.botao--curriculo {
+    @include tipografia($font-size-base, $fonte-texto, $branco, 600);
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    background: rgba($roxo, 0.15);
+    padding: $space-3 $space-5;
+    border: 1px solid rgba($roxo, 0.4);
+    border-radius: 5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    justify-self: center;
+
+    &:hover {
+        background: $roxo;
+        color: $background;
+        transform: translateY(-3px);
+        box-shadow: 0 0 25px rgba($roxo, 0.4);
+        border: $roxo;
+    }
+}
+// tablet
+@media (min-width: 768px) {
+    .sobre--wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: $space-8;
+    }
+
+    .sobre__foto {
+        display: block;
+        flex: 0 0 320px;
+    }
+
+    .sobre--foto__img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 1.6rem;
+  border: 3px solid rgba($roxo, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba($roxo, 0.25),
+                0 4px 12px rgba($roxo, 0.15);
+  }
+}
+
+
+    .sessao--sobre__content {
+        flex: 1;
+        text-align: left;
+    }
+
+    .sessao--sobre__titulo::after {
+        left: 0;
+        transform: translateX(0);
+        width: 100px;
+    }
+
+    .sessao--sobre__texto {
+        margin: 0 0 $space-6;
+        max-width: none;
+    }
+
+    .botao--curriculo {
+        justify-self: start;
+    }
+}

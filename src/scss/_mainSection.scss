@@ -34,7 +34,7 @@
   }
 
   .sessao--apresentacao__titulo {
-    @include tipografia(clamp(4rem, 10vw, 9.6rem), $fonte-titulos, none, 700);
+    @include tipografia(clamp($font-size-3xl, 10vw, 9.6rem), $fonte-titulos, none, 700);
     @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
     line-height: 1.1;
@@ -43,7 +43,7 @@
   }
 
   .sessao--apresentacao__subtitulo {
-    font-size: clamp($font-size-lg, 4vw, $font-size-3xl);
+    font-size: clamp($font-size-xl, 4vw, $font-size-3xl);
   }
 
   .sessao--apresentacao__texto {

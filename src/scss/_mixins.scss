@@ -106,7 +106,7 @@
   filter: drop-shadow(0 0 10px rgba(127, 90, 240, 0.2));
 }
 
-@mixin tipografia($size, $family, $color: none, $weight: 400, $transform: none) {
+@mixin tipografia($size, $family: $fonte-texto, $color: none, $weight: 400, $transform: Capitalize) {
   font-size: $size;
   font-family: $family;
   color: $color;
