@@ -12,7 +12,7 @@
   @include efeitoBrilhoDeFundo($roxo);
 
   .sessao--apresentacao__span {
-    @include tipografia(clamp($font-size-xs, 3vw, $font-size-base), $fonte-texto, $roxo, 300);
+    @include tipografia(clamp($font-size-xs, 3vw, $font-size-base), $fonte-texto, $roxo, 300, none);
     background: rgba($roxo, 0.1);
     border: 1px solid rgba($roxo, 0.3);
     border-radius: 5rem;

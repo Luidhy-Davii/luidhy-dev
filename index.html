@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfólio de Luidhy Davi, desenvolvedor front-end especializado em soluções web modernas, responsivas e de alta performance." />
   <title>Luidhy | Front-end Developer</title>
 </head>
 
 <body>
   <header class="cabecalho container--spacing">
-    <a href="#" class="cabecalho--logo" aria-hidden="true"><span class="cabecalho--span">&lt;</span> Luidhy DEV <span
-        class="cabecalho--span">&gt;</span></a>
+    <a href="#top" class="cabecalho--logo">
+      <span class="cabecalho--span" aria-hidden="true">&lt;</span> Luidhy DEV <span class="cabecalho--span"
+        aria-hidden="true">&gt;</span>
+    </a>
     <!-- menu hamburguer -->
     <div class="menu-toggle" id="mobile-menu" tabindex="0" aria-label="Abrir menu" aria-expanded="false">
       <span class="bar"></span>
@@ -20,17 +24,17 @@
 
     <nav class="cabecalho--nav" role="navigation" aria-label="Menu de navegação">
       <ul class="nav--list">
-        <li><a href="#sobre" class="nav--list__links" tabindex="0">Sobre</a></li>
-        <li><a href="#importancia" class="nav--list__links" tabindex="0">Serviços</a></li>
-        <li><a href="#tes" class="nav--list__links" tabindex="0">Habilidades</a></li>
-        <li><a href="#agenda" class="nav--list__links" tabindex="0">Projetos</a></li>
-        <li><a href="#contato" class="nav--list__links" tabindex="0">Contato</a></li>
+        <li><a href="#sobre" class="nav--list__links">Sobre</a></li>
+        <li><a href="#servicos" class="nav--list__links">Serviços</a></li>
+        <li><a href="#habilidades" class="nav--list__links">Habilidades</a></li>
+        <li><a href="#projetos" class="nav--list__links">Projetos</a></li>
+        <li><a href="#contato" class="nav--list__links">Contato</a></li>
       </ul>
     </nav>
   </header>
   <!-- fim-header -->
   <!-- sessão apresentação -->
-  <main class="sessao--apresentacao ">
+  <main class="sessao--apresentacao">
     <h3 class="sessao--apresentacao__span">Salveee, eu sou o 👋</h3>
     <h1 class="sessao--apresentacao__titulo" data-tilt>Luidhy Davi</h1>
     <h2 class="sessao--apresentacao__subtitulo">Front-End Developer</h2>
@@ -94,11 +98,70 @@
     </div>
   </section>
   <!-- fim-sessão sobre -->
+  <!-- sessão habilidades -->
+  <section id="servicos" class="sessao--servicos">
+    <div class="servicos--wrapper container">
+      <header class="servicos--header">
+        <h2 class="servicos--titulo">Serviços Especializados</h2>
+        <p class="servicos--texto">
+          Ofereço soluções front-end que unem minimalismo, estética e performance. Crio páginas responsivas, acessíveis e com design pensado para reforçar a presença digital da sua marca.
+        </p>
+      </header>
+
+      <!-- CARDS -->
+      <div class="servicos--grid">
+        <article class="card-servico">
+          <h3>Landing Pages</h3>
+          <p>Páginas rápidas, bonitas e feitas para apresentar sua marca de forma clara e profissional.</p>
+          <ul class="card--lista">
+            <li>Design moderno, responsivo e pensado para todos os tamanhos de tela.</li>
+            <li>Seções bem organizadas e com destaque para o que é mais importante.</li>
+            <li>Estrutura pensada para o usuário encontrar tudo com facilidade.</li>
+            <li>Ótimo desempenho e carregamento rápido.</li>
+          </ul>
+          <footer class="card--tech">
+            Tecnologias: HTML, JavaScript, Tailwind CSS, SASS, GSAP.
+          </footer>
+        </article>
+
+        <article class="card-servico">
+          <h3>Sites Institucionais</h3>
+          <p>Um site completo para sua empresa ter presença profissional na internet.</p>
+          <ul class="card--lista">
+            <li>Layout exclusivo, combinando com a identidade da marca</li>
+            <li>Páginas organizadas para apresentar serviços, contatos e informações importantes</li>
+            <li>Facilidade para atualizar conteúdos (se você quiser depois posso te ajudar com isso)</li>
+            <li>Site seguro, rápido e responsivo</li>
+          </ul>
+          <footer class="card--tech">
+            Tecnologias: HTML, CSS, SASS, Vercel, AOS.animate.
+          </footer>
+        </article>
+
+        <article class="card-servico">
+          <h3>Linktree Personalizado</h3>
+          <p>Uma página simples e estilosa onde você reúne todos seus links em um só lugar..</p>
+          <ul class="card--lista">
+            <li>Design 100% personalizado.</li>
+            <li>Animações suaves e interativas.</li>
+            <li>Todos os seus links organizados em um layout que represente sua marca.</li>
+            <li>Responsivo e leve.</li>
+            <li>Estátistica de clicks.</li>
+          </ul>
+          <footer class="card--tech">
+            Tecnologias: HTML, Tailwind, JavaScript, Netlify/Vercel, particles.js.
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- fim sessão habilidades -->
   <!-- Botão Voltar ao Topo -->
-  <a href="#" class="scroll--top">
+  <a href="#top" class="scroll--top">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
       <path fill-rule="evenodd"
-        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 1-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
     </svg>
   </a>
   <!-- scripts -->

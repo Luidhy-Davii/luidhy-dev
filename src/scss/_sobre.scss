@@ -30,22 +30,10 @@
 .sessao--sobre__titulo {
     @include tipografia(clamp($font-size-xl, 4vw, $font-size-3xl), $fonte-titulos, $branco, 700, capitalize);
     @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+    @include linhaEmbaixoDoTexto(-0.5rem, 80%, 4px, $roxo);
     margin: 0 0 $space-4;
     position: relative;
     display: inline-block;
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -0.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 4px;
-        background: $roxo;
-        border-radius: 2px;
-        box-shadow: 0 0 15px rgba($roxo, 0.5);
-    }
 }
 
 .sessao--sobre__texto {

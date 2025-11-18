@@ -240,3 +240,11 @@ FIM DO MAPA
 ================================================================================background-image: linear-gradient(rgb(9, 9, 11), rgb(9, 9, 11), rgba(110, 82, 255, 0.05))
 
 - adicionar icons flutuantes na sessao apresentação. 
+
+
+
+
+
+clamp($font-size-3xl, 10vw, 9.6rem) titulo
+clamp($font-size-xl, 4vw, $font-size-3xl); subtitulo
+clamp($font-size-md, 3vw, $font-size-lg) texto

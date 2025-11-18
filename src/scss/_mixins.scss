@@ -113,3 +113,18 @@
   font-weight: $weight;
   text-transform: $transform;
 }
+
+@mixin linhaEmbaixoDoTexto($botom, $width, $height, $corDaLinha) {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: $botom;
+        left: 50%;
+        transform: translateX(-50%);
+        width: $width;
+        height: $height;
+        background: $corDaLinha;
+        border-radius: 2px;
+        box-shadow: 0 0 15px rgba($roxo, 0.5);
+    }
+}

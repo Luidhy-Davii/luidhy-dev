@@ -1,0 +1,128 @@
+// _servicos.scss
+@use './variaveis' as *;
+@use './mixins' as *;
+
+.sessao--servicos {
+    min-height: 100dvh;
+    padding: $space-8 1rem;
+    background: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    @include efeitoBrilhoDeFundo($roxo);
+}
+
+.servicos--wrapper {
+    max-height: 100%;
+    overflow-y: auto;
+    padding: $space-4 0;
+}
+
+/* HEADER */
+.servicos--header {
+    text-align: center;
+    margin-bottom: $space-7;
+}
+
+.servicos--titulo {
+    @include tipografia(clamp($font-size-xl, 4vw, $font-size-3xl), $fonte-titulos, $branco, 700);
+    @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+    @include linhaEmbaixoDoTexto(-0.5rem, 30%, 4px, $roxo);
+    margin: 0 0 $space-3;
+    position: relative;
+    display: inline-block;
+}
+
+.servicos--texto {
+    font-size: clamp($font-size-md, 3vw, $font-size-lg);
+    color: $cinza;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* GRID */
+.servicos--grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-6;
+}
+
+@media (min-width: 768px) {
+    .servicos--grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CARD */
+.card-servico {
+    background: rgba(22, 22, 26, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba($roxo, 0.2);
+    border-radius: 1.6rem;
+    padding: $space-6;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        transform: translateY(-10px);
+        border-color: rgba($roxo, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba($roxo, 0.25);
+    }
+}
+
+.card--icon {
+    font-size: 3.5rem;
+    color: $roxo;
+    margin-bottom: $space-3;
+    text-align: center;
+}
+
+.card-servico h3 {
+    font-size: clamp($font-size-md, 3vw, $font-size-xl);
+    color: $branco;
+    margin: 0 0 $space-2;
+    text-align: center;
+}
+
+.card-servico p {
+    color: $cinza;
+    font-size: clamp($font-size-base, 2.5vw, $font-size-md);
+    margin-bottom: $space-4;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card--lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $space-4;
+    flex-grow: 1;
+
+    li {
+        color: $cinza;
+        font-size: clamp($font-size-sm, 2vw, $font-size-base);
+        margin-bottom: $space-2;
+        position: relative;
+        padding-left: 2rem;
+
+        &::before {
+            content: '✓';
+            color: $roxo;
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+        }
+    }
+}
+
+.card--tech {
+    font-size: clamp($font-size-xs, 2vw, $font-size-md);
+    color: $roxo-claro;
+    font-style: italic;
+    text-align: center;
+    margin-top: auto;
+    padding-top: $space-3;
+    border-top: 1px solid rgba($roxo, 0.2);
+}
