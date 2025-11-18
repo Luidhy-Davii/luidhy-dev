@@ -106,13 +106,32 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// MOSTRA O SCROLL TOP DEPOIS DE 400PX
+// ScrollTop
+// Espera o documento HTML carregar antes de rodar o script
+document.addEventListener("DOMContentLoaded", function() {
 
+  //  Encontra o botão pelo ID
+  var btnScrollTop = document.getElementById("btnScrollTop");
 
+  // Só continua se o botão existir na página
+  if (btnScrollTop) {
+    
+    // Função que verifica o scroll
+    function toggleBotaoScroll() {
+      let scrollPosition = window.scrollY || document.documentElement.scrollTop;
+      //Mostrar só depois de 200px
+      if (scrollPosition > 200) {
+        btnScrollTop.classList.add("show");
+      } else {
+        btnScrollTop.classList.remove("show");
+      }
+    }
 
+    // 5. "Ouve" o evento de scroll da janela
+    window.addEventListener("scroll", toggleBotaoScroll);
+  }
 
-
-
+});
 
 
 

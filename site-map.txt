@@ -247,4 +247,4 @@ FIM DO MAPA
 
 clamp($font-size-3xl, 10vw, 9.6rem) titulo
 clamp($font-size-xl, 4vw, $font-size-3xl); subtitulo
-clamp($font-size-md, 3vw, $font-size-lg) texto
+clamp($font-size-md, 3vw, $font-size-lg)
