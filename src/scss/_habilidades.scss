@@ -1,0 +1,205 @@
+@use './variaveis' as *;
+@use './mixins' as *;
+
+.sessao--habilidades {
+    // IMPORTANTE: min-height permite que a tela cresça se tiver muitos ícones
+    min-height: 100dvh;
+    padding: $space-8 $space-4;
+    background: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    @include efeitoBrilhoDeFundo($roxo, 60px, 40%);
+}
+
+.habilidades-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-5;
+}
+
+.habilidades--header {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.habilidades--titulo {
+    @include tipografia(clamp($font-size-xl, 6vw, $font-size-3xl), $fonte-titulos, $branco, 700);
+    @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+    @include linhaEmbaixoDoTexto(-0.5rem, 40%, 4px, $roxo);
+    display: inline-block;
+    margin-bottom: $space-5;
+    position: relative;
+}
+
+.habilidades--texto {
+    // no mobile esconde a caixa de texto para usabilidade.
+    display: none;
+}
+
+.habilidades--grid {
+    display: grid;
+    /* MOBILE: 2 colunas fixas. Fica organizado e legível. */
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-3;
+    width: 100%;
+    margin-top: $space-2;
+}
+
+.tech-card {
+    background: rgba(22, 22, 26, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba($roxo, 0.15);
+    border-radius: 1.2rem;
+    padding: $space-4 $space-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Feedback Visual de Toque no Mobile (:active) */
+    &:active {
+        border-color: $roxo;
+        background: rgba($roxo, 0.15);
+
+        .tech-icon img,
+        .tech-icon svg {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .tech-name {
+            color: $branco;
+        }
+    }
+}
+
+.tech-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+
+    img,
+    svg {
+        width: 4rem;
+        height: 4rem;
+        opacity: 0.8;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, opacity;
+    }
+
+    /* SVGs inline (Brancos) mantêm a cor fixa */
+    svg {
+        fill: $branco;
+    }
+}
+
+.tech-name {
+    @include tipografia($font-size-xs, $fonte-texto, $cinza, 500);
+    text-align: center;
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MEDIA QUERIES (TABLET E DESKTOP) 
+   ========================================= */
+@media (min-width: 768px) {
+
+    .sessao--habilidades {
+        padding: $space-9 $space-6;
+    }
+
+    .habilidades-wrapper {
+        gap: $space-6;
+    }
+
+
+    .habilidades--texto {
+        /* Trazemos o display flex de volta */
+        display: flex;
+
+        @include tipografia($font-size-md, $fonte-texto, $cinza, 400, none);
+        min-height: 100px;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba($roxo, 0.05);
+        border: 1px dashed rgba($roxo, 0.3);
+        border-radius: 12px;
+        padding: $space-4;
+        transition: all 0.3s ease;
+
+        /* Estilo quando o JS ativa a descrição */
+        &.ativo {
+            border-style: solid;
+            border-color: rgba($roxo, 0.8);
+            background: rgba($roxo, 0.15);
+            color: $branco;
+            box-shadow: 0 0 20px rgba($roxo, 0.15);
+            transform: translateY(-2px);
+        }
+    }
+
+    /* GRID DESKTOP: Responsivo automático */
+    .habilidades--grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: $space-5;
+        margin-top: $space-4;
+    }
+
+    .tech-card {
+        padding: $space-5 $space-3;
+        border-radius: 1.6rem;
+        gap: $space-3;
+
+        /* Hover APENAS se tiver mouse (não buga touch) */
+        @media (hover: hover) {
+            &:hover {
+                border-color: rgba($roxo, 0.8);
+                transform: translateY(-6px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), 0 0 25px rgba($roxo, 0.2);
+
+                .tech-icon img,
+                .tech-icon svg {
+                    opacity: 1;
+                    transform: translateY(-5px) scale(1.1);
+                    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+                }
+
+                .tech-name {
+                    color: $branco;
+                }
+            }
+        }
+    }
+
+    .tech-icon {
+        height: 6rem;
+
+        img,
+        svg {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+
+    .tech-name {
+        font-size: $font-size-base;
+    }
+}
