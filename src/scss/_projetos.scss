@@ -1,0 +1,196 @@
+@use './variaveis' as *;
+@use './mixins' as *;
+
+.sessao--projetos {
+  min-height: 100dvh;
+  padding: $space-9 $space-4;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  @include efeitoBrilhoDeFundo($roxo, 80px, 70%);
+
+  @media (min-width: 768px) {
+    padding: $space-9 $space-6;
+  }
+}
+
+.projetos--wrapper {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-7;
+}
+
+.projetos--header {
+  text-align: center;
+}
+
+.projetos--titulo {
+  @include tipografia(clamp($font-size-xl, 6vw, $font-size-3xl), $fonte-titulos, $branco, 700);
+  @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+  @include linhaEmbaixoDoTexto(-0.6rem, 50%, 5px, $roxo);
+  margin: 0 0 $space-3;
+  position: relative;
+  display: inline-block;
+}
+
+.projetos--subtitulo {
+  @include tipografia(clamp($font-size-base, 3vw, $font-size-lg), $fonte-texto, $cinza, 400);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.projetos--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-6;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-7;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projeto-card {
+  background: rgba(22, 22, 26, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba($roxo, 0.15);
+  border-radius: 1.8rem;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-12px);
+    border-color: rgba($roxo, 0.7);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba($roxo, 0.3);
+
+    .projeto--imagem img { transform: scale(1.08); }
+    .projeto--overlay { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (hover: none) {
+    &:active {
+      transform: translateY(-6px);
+      border-color: $roxo;
+    }
+  }
+}
+
+.projeto--imagem {
+  position: relative;
+  height: clamp(180px, 40vw, 260px);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+}
+
+.projeto--overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba($roxo,0.95), rgba(133,74,255,0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+
+  span {
+    @include tipografia(clamp(1.2rem, 4vw, 1.6rem), $fonte-titulos, $branco, 700);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+}
+
+.projeto--conteudo {
+  padding: $space-6;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  flex-grow: 1;
+}
+
+.projeto--titulo {
+  @include tipografia(clamp($font-size-lg, 4vw, $font-size-xl), $fonte-titulos, $branco, 700);
+  margin: 0;
+}
+
+.projeto--descricao {
+  @include tipografia(clamp($font-size-sm, 2.5vw, $font-size-base), $fonte-texto, $cinza, 400);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.projeto--tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+
+  span {
+    background: rgba($roxo, 0.15);
+    color: $roxo-claro;
+    padding: $space-1 $space-3;
+    border-radius: 50px;
+    @include tipografia(clamp(1rem, 2vw, 1.3rem), $fonte-texto, $roxo-claro, 500);
+  }
+}
+
+.projeto--links {
+  display: flex;
+  gap: $space-3;
+  margin-top: auto;
+  padding-top: $space-4;
+  border-top: 1px dashed rgba($roxo, 0.2);
+
+  a, span {
+    flex: 1;
+    padding: $space-3;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    @include tipografia(clamp($font-size-sm, 2.5vw, $font-size-base));
+  }
+
+  .btn-github {
+    background: rgba($roxo, 0.1);
+    color: $branco;
+    border: 1px solid rgba($roxo, 0.3);
+    &:hover { background: $roxo; color: #000; transform: translateY(-3px); }
+  }
+
+  .btn-live {
+    background: $roxo;
+    color: #000;
+    &:hover { background: $branco; color: #000; box-shadow: 0 10px 25px rgba($roxo,0.4); }
+  }
+
+  .btn-desativado {
+    background: rgba(255,255,255,0.05);
+    color: $cinza;
+    cursor: not-allowed;
+    border: 1px dashed rgba($roxo, 0.2);
+  }
+}
