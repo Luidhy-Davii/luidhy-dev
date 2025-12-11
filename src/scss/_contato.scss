@@ -1,0 +1,145 @@
+@use './variaveis' as *;
+@use './mixins' as *;
+
+.sessao--contato {
+  min-height: 100dvh;
+  padding: $space-9 $space-4;
+  background: $background;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include efeitoBrilhoDeFundo($roxo, 80px, 70%);
+
+  @media (min-width: 768px) { padding: $space-9 $space-6; }
+}
+
+.contato--wrapper { max-width: 1200px; width: 100%; }
+
+.contato--header {
+  text-align: center;
+  margin-bottom: $space-8;
+}
+
+.contato--titulo {
+  @include tipografia(clamp($font-size-xl, 6vw, $font-size-3xl), $fonte-titulos, $branco, 700);
+  @include gradienteTitulos(hsl(240 100% 99.8%), hsl(250 100% 66%), hsl(240 100% 99.8%));
+  @include linhaEmbaixoDoTexto(-0.6rem, 50%, 5px, $roxo);
+}
+
+.contato--subtitulo {
+  @include tipografia(clamp($font-size-base, 3vw, $font-size-lg), $fonte-texto, $cinza, 400);
+  margin-top: $space-3;
+}
+
+.contato--grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-7;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contato--form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  input, textarea {
+    width: 100%;
+    padding: $space-4;
+    background: rgba(22,22,26,0.8);
+    border: 1px solid rgba($roxo,0.2);
+    border-radius: 12px;
+    color: $branco;
+    @include tipografia($font-size-base);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $roxo;
+      box-shadow: 0 0 20px rgba($roxo,0.2);
+    }
+  }
+
+  .btn-enviar {
+    align-self: flex-start;
+    padding: $space-4 $space-6;
+    background: $roxo;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    transition: all 0.3s ease;
+    font-size: clamp($font-size-base, 3vw, $font-size-md);
+    &:hover {
+      background: $branco;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba($roxo,0.4);
+    }
+  }
+}
+
+.contato--info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+  padding: $space-6;
+
+  .info--title {
+    @include tipografia(clamp($font-size-lg, 4vw, $font-size-xl), $fonte-titulos, $branco, 700);
+    margin-bottom: $space-4;
+  }
+
+  .info--item {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    @include tipografia($font-size-base, $fonte-texto, $cinza);
+
+    a {
+      color: $roxo-claro;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover { color: $branco; }
+    }
+
+    svg { color: $roxo; flex-shrink: 0; }
+  }
+}
+
+.form-mensagem {
+  margin: $space-3 0;
+  padding: $space-3;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  &.sucesso {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: #86efac;
+    opacity: 1;
+  }
+
+  &.erro {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+    opacity: 1;
+  }
+
+  &.enviando {
+    color: $roxo-claro;
+    opacity: 1;
+  }
+}
+

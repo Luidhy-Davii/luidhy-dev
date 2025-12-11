@@ -5,6 +5,7 @@ import { initMenuMobile } from './menu.js';
 import { initTiltEffect, initTypeWriter } from './animacoes.js';
 import { initScrollTop } from './scroll.js';
 import { initHabilidadesInteraction } from './habilidades.js';
+import './form.js';
 
 document.addEventListener('DOMContentLoaded', () => {  
   initMenuMobile();

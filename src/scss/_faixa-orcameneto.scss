@@ -1,0 +1,53 @@
+@use './variaveis' as *;
+@use './mixins' as *;
+
+.sessao--orcamento {
+  background: linear-gradient(135deg, #7f5af0 0%, #5a3fd1 100%);
+  padding: clamp(60px, 10vw, 100px) 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,30 100,100 0,100" fill="rgba(0,0,0,0.15)"/></svg>') top / 100% 50px no-repeat,
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100 0,70" fill="rgba(0,0,0,0.15)"/></svg>') bottom / 100% 50px no-repeat;
+  }
+}
+
+.orcamento--content { position: relative; z-index: 1; }
+
+.orcamento--titulo {
+  @include tipografia(clamp(2.5rem, 7vw, 4.5rem), $fonte-titulos, $branco, 800);
+  margin-bottom: $space-3;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.orcamento--texto {
+  @include tipografia(clamp($font-size-lg, 4vw, $font-size-xl), $fonte-texto, rgba(255,255,255,0.9), 400);
+  max-width: 800px;
+  margin: 0 auto $space-6;
+}
+
+.btn-orcamento {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-4 $space-7;
+  background: #000;
+  color: $branco;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  &:hover {
+    background: $branco;
+    color: #000;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  }
+}
